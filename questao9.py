@@ -11,19 +11,20 @@ renda = float(input("Digite sua renda mensal: "))
 emprestimo = float(input("Digite o valor do empréstimo: "))
 
 calculo_da_renda = renda * 10
-calculo_de_prestacao = (renda * 0,3)
+prestacao = renda * 0.3
 
 if emprestimo > calculo_da_renda :
     print("Empréstimo negado!") 
-    parcela = emprestimo / prestacao
-
-if parcela > calculo_de_prestacao: 
-    print("Empréstimo negado!") 
+    
 else:
-    float(input("Digite o valor das parcelas: "))
-
-    print("Empréstimo aceito!")
-    print(f"RENDA:{renda}")
-    print(f"EMPRÉSTIMO:{emprestimo}")
-    print(f"PRESTAÇÃO:{prestacao}")
-    print(f"PARCELA:{parcela}")
+    parcela = int(input("Digite o valor das parcelas: "))
+    calculo_parcela = emprestimo /parcela
+    if calculo_parcela > prestacao: 
+        print("Empréstimo negado!") 
+    else:
+      
+        print("Empréstimo aceito!")
+        print(f"RENDA:{renda}")
+        print(f"EMPRÉSTIMO:{emprestimo}")
+        print(f"PARCELA:{parcela}")
+        print(f"VALOR DAS PARCELAS:{calculo_parcela:.2f}")
